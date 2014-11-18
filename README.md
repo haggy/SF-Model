@@ -76,7 +76,7 @@ System.debug('======> The first contact name is: ' + contacts[0].Name);
 ```
 
 ### Saving records
-Use the `save()` method on the DbModel to update or create records
+Use the `save()` method on the `DbModel` to update or create records
 The `save()` method will take a single `DbRecord` or a `List<DbRecord>`
 
 ```java

@@ -1,9 +1,13 @@
-# Ignore Everything
-*
+apex-scripts/
+config/
+src/classes/*
+src/pages/
+src/staticresources
+Personal*
+package.xml
 
 # Except these
-!.gitignore
-!README.md
+!src
 !src/classes/AbstractBaseModel.cls
 !src/classes/DbModel.cls
 !src/classes/DbRecord.cls
