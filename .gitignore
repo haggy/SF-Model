@@ -1,0 +1,9 @@
+# Ignore Everything
+*
+
+# Except these
+!.gitignore
+!README.md
+!src/classes/AbstractBaseModel.cls
+!src/classes/DbModel.cls
+!src/classes/DbRecord.cls
