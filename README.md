@@ -6,7 +6,7 @@
 
 ### Querying records by ID
 ```java
-// Instatiate a new model for Contacts
+// Instatiate a new model for Account
 DbModel model = new DbModel('Account');
 
 // Select Name, NumberOfEmployees and AccountNumber
@@ -76,6 +76,55 @@ System.debug('======> The first contact name is: ' + contacts[0].Name);
 ```
 
 ### Saving records
+Use the `save()` method on the DbModel to update or create records
+The `save()` method will take a single `DbRecord` or a `List<DbRecord>`
 
+```java
+// Let's update an account to have 1200 exmployees
+DbModel model = new DbModel('Account');
+// Find the account to update
+DbRecord acct = model.selectFields(new List<Schema.SObjectField> {
+        Account.Name, 
+        Account.NumberOfEmployees,
+        Account.AccountNumber
+    })
+    .findById('001i000000QiYDY');
+   
+// Set NumberOfEmployees to 1200
+acct.set(Account.NumberOfEmployees, 1200);
+// Save the record
+model.save(acct);
+```
 
 ### Deleting records
+Use the `remove()` method on `DbModel` object to delete records.
+The `remove()` method will take a single `DbRecord` or a `List<DbRecord>`
+
+```java
+// Let's delete an account with the following ID
+DbRecord acct = model.selectField('Id')
+    .findById('001i000000QiYDY');
+
+model.remove(acct);
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
